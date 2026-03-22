@@ -33,6 +33,8 @@ The Controls_Set system is composed of:
 - Outliner integration (visual feedback)
 - Right-click workflow utilities
 
+![ControlSet_UI](https://github.com/user-attachments/assets/203fcfd4-4d06-457a-9ef7-1096a0fb0e7f)
+
 The tool may operate in two modes:
 
 ### Preset Mode
@@ -61,6 +63,8 @@ After processing, the final `controls_Set` node is generated or updated.
 
 ### Right-Click Workflow
 
+![FilterSetup_Function](https://github.com/user-attachments/assets/437f31af-d80e-4cf3-9ff4-f8a4d4b16dea)
+
 Within the tool UI:
 
 - Access **JSON → Filter Setup**
@@ -73,6 +77,8 @@ Within the tool UI:
 ---
 
 ## Filter Setup Builder
+
+![ControlSet_Compare_UI](https://github.com/user-attachments/assets/ff3bc603-a8e5-42c2-bf9c-f1a3b4422152)
 
 The filter builder is divided into multiple functional rows.
 
