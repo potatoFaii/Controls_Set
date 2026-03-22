@@ -2,6 +2,8 @@
 
 # Controls_Set for Autodesk Maya
 
+![control_set](https://github.com/user-attachments/assets/8956f8f0-e315-4ef1-b91f-cd1842b6b22c)
+
 ---
 
 ## Overview
