@@ -1,0 +1,95 @@
+global string $gShelfTopLevel;
+string $currentShelf = `tabLayout -query -selectTab $gShelfTopLevel`;
+setParent $currentShelf;
+
+global proc string CS_defineScriptCommand(
+    string $scriptName,
+    string $scriptFunc,
+    string $scriptFilter,
+    string $filePath,
+    string $mayaScriptDir
+) {
+
+    string $command = 
+        "import sys\n" +
+        "\n" +
+        "ControlsSetPath = \"" + $mayaScriptDir + "\"\n" +
+        "if ControlsSetPath not in sys.path:\n" +
+        "    sys.path.append(ControlsSetPath)\n" +
+        "\n" +
+        "try:\n" +
+        "   import " + $filePath + "." + $scriptName + " as " + $scriptName + "\n" +
+        "   import " + $filePath + "." + $scriptFunc + " as " + $scriptFunc + "\n" +
+        "   import " + $filePath + "." + $scriptFilter + " as " + $scriptFilter + "\n" +
+        "except ImportError as e:\n" + 
+        "   import traceback\n" +
+        "   print('Failed to import ControlsSet modules:\\n'+ traceback.format_exc())\n" +
+        "\n" +
+        "try:\n" +
+        "   from importlib import reload\n" +
+        "except ImportError:\n" +
+        "   pass\n" +
+        "\n" +
+        "def safe_reload(module):\n" +
+        "   try:\n" +
+        "       reload(module)\n" +
+        "   except Exception:\n" +
+        "       import imp\n" +
+        "       imp.reload(module)\n" +
+        "\n" +
+        "safe_reload(" + $scriptName + ")\n" +
+        "safe_reload(" + $scriptFunc + ")\n" +
+        "safe_reload(" + $scriptFilter + ")\n" +
+        "\n" + 
+        "" + $scriptName + "." + $scriptName + "()\n";
+    return $command;
+}
+
+// Define the variables
+$scriptName = "ControlsSet_UI";
+$scriptFunc = "ControlsSet_Func";
+$scriptFilter = "FilterCompare_UI";
+$filePath = "IndivPyControlsSet";
+$scriptLoc = `scriptLoc`;
+$iconExt = "png";
+$icon = $scriptLoc + "/Icon_Controls_Set/Controls_Set." + $iconExt;
+$annot = $scriptName + "\nSet Controls_Set for RIG";
+
+// MenuItem variables
+$baseClassFunction = "IndivPyControlsSet()";
+$baseCommand = CS_defineScriptCommand($scriptName,$scriptFunc,$scriptFilter,$filePath,$scriptLoc);
+
+shelfButton
+    -annotation $annot
+    -image1 $icon
+    -label $scriptName
+    -sourceType "python"
+    -command $baseCommand
+;
+
+//string $buttons[] = `shelfLayout -q -ca $currentShelf`;
+//int $buttonCount = size($buttons);
+
+
+global proc asInstallScriptLocator (){}
+
+global proc string scriptLoc (){
+    string $whatIs=`whatIs asInstallScriptLocator`;
+    string $fullPath=`substring $whatIs 25 999`;
+    string $buffer[];
+    string $slash="/";
+    if (`gmatch $whatIs "*\\\\*"`){//sourced from ScriptEditor
+        $slash="\\";
+    }
+    int $numTok=`tokenize $fullPath $slash $buffer`;
+    int $numLetters=size($fullPath);
+    int $numLettersLastFolder=size($buffer[$numTok-1]);
+    string $scriptLocation=`substring $fullPath 1 ($numLetters-$numLettersLastFolder)`;
+    return $scriptLocation;
+}
+
+
+global proc string test (){
+    string $check=`substring scriptLoc -6 999`;
+    return $check;
+}
