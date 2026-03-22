@@ -33,8 +33,6 @@ The Controls_Set system is composed of:
 - Outliner integration (visual feedback)
 - Right-click workflow utilities
 
-![ControlSet_UI](https://github.com/user-attachments/assets/203fcfd4-4d06-457a-9ef7-1096a0fb0e7f)
-
 The tool may operate in two modes:
 
 ### Preset Mode
