@@ -66,8 +66,6 @@ After processing, the final `controls_Set` node is generated or updated.
 
 Within the tool UI:
 
-![FilterSetup_Function](https://github.com/user-attachments/assets/50b2becf-abe8-48cb-b4d3-9378f6b1a970)
-
 
 - Access **JSON → Filter Setup**
 - This opens the **Filter Setup Builder UI**
