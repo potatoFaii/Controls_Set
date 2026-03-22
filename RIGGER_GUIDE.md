@@ -61,8 +61,6 @@ After processing, the final `controls_Set` node is generated or updated.
 
 ### Right-Click Workflow
 
-![FilterSetup_Function](https://github.com/user-attachments/assets/437f31af-d80e-4cf3-9ff4-f8a4d4b16dea)
-
 Within the tool UI:
 
 - Access **JSON → Filter Setup**
