@@ -49,6 +49,9 @@ Scans the scene for potential controllers and applies exclusion filtering based 
 
 When launching the Controls_Set UI:
 
+![ControlSet_UI](https://github.com/user-attachments/assets/e1b3216c-49c1-4c3d-a90e-953160821603)
+
+
 - The tool attempts to load filter data from a JSON filepath
 - If successfully loaded, the generated control set will be highlighted in **green in the Outliner**
 - Riggers may choose between:
@@ -62,6 +65,9 @@ After processing, the final `controls_Set` node is generated or updated.
 ### Right-Click Workflow
 
 Within the tool UI:
+
+![FilterSetup_Function](https://github.com/user-attachments/assets/50b2becf-abe8-48cb-b4d3-9378f6b1a970)
+
 
 - Access **JSON → Filter Setup**
 - This opens the **Filter Setup Builder UI**
