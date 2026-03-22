@@ -78,7 +78,7 @@ Within the tool UI:
 
 ## Filter Setup Builder
 
-![ControlSet_Compare_UI](https://github.com/user-attachments/assets/ff3bc603-a8e5-42c2-bf9c-f1a3b4422152)
+![ControlSet_Compare_UI](https://github.com/user-attachments/assets/eac39eb8-9b55-463b-a338-2a96baee931f)
 
 The filter builder is divided into multiple functional rows.
 
