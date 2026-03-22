@@ -51,7 +51,6 @@ When launching the Controls_Set UI:
 
 ![ControlSet_UI](https://github.com/user-attachments/assets/e1b3216c-49c1-4c3d-a90e-953160821603)
 
-
 - The tool attempts to load filter data from a JSON filepath
 - If successfully loaded, the generated control set will be highlighted in **green in the Outliner**
 - Riggers may choose between:
@@ -66,6 +65,7 @@ After processing, the final `controls_Set` node is generated or updated.
 
 Within the tool UI:
 
+![FilterSetup_Function](https://github.com/user-attachments/assets/e775e75b-243b-40a4-bb62-16a1ef10a33a)
 
 - Access **JSON → Filter Setup**
 - This opens the **Filter Setup Builder UI**
