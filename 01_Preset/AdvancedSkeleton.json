@@ -1,0 +1,8 @@
+{
+    "excludeList": [
+		"BendCurve",
+		"FitSkeleton",
+		"FaceFitSkeleton",
+		"FaceDeformationSystem"
+    ]
+}
